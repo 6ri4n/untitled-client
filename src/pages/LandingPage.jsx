@@ -1,6 +1,6 @@
-import About from "./About";
-import Intro from "./Intro";
-import ImageContainer from "./ImageContainer";
+import About from "../components/LandingPage/About";
+import Intro from "../components/LandingPage/Intro";
+import ImageContainer from "../components/LandingPage/ImageContainer";
 
 function LandingPage() {
   return (

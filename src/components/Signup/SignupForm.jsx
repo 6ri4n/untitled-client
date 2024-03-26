@@ -31,15 +31,19 @@ function SignupForm() {
     event.preventDefault();
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
-    const confirmPassword = confirmPasswordRef.current.value;
     FormValidation();
     StrongPassword(passwordRef, strongPassError, setStrongPassError);
     if (!passwordError && !usernameError && !strongPassError) {
-      const payload = JSON.stringify({
+      const payload = {
         username,
         password,
-        confirmPassword,
-      });
+      };
+      const { data, loading, error, sendRequest } = useApi(
+        "POST",
+        "/account/signup",
+        payload
+      );
+      sendRequest();
     }
   };
 
